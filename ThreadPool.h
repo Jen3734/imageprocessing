@@ -1,6 +1,10 @@
 #ifndef THREAD_POOL_H
 #define THREAD_POOL_H
 
+//Credit to projschj
+//https://github.com/progschj/ThreadPool/blob/master/ThreadPool.h
+
+
 #include <vector>
 #include <queue>
 #include <memory>

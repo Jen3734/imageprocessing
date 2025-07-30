@@ -1,3 +1,8 @@
+#pragma once
+
+//Credit to CodePi
+//https://github.com/CodePi/ThreadSafeQueue/blob/master/ThreadSafeQueue.h
+
 #include <queue>
 #include <mutex>
 #include <condition_variable>

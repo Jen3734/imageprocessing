@@ -1,6 +1,9 @@
 #if !defined(MEMHANDLER_H)
 #define MEMHANDLER_H
 
+//Credit to RuyCalderon
+//https://github.com/RuyCalderon/MemHandler/blob/master/MemHandler.h
+
 #include "MemHandleControl.h"
 #include "memoryapi.h"
 #include "stdint.h"
