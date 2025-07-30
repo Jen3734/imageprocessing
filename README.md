@@ -1,7 +1,7 @@
 This project impelements a large scale real-time image processing workflow under MIT license. The project utilize Windows CPU memory handling and all written in C++17. The CPU memory handling can be changed to GPU memory handling easily. We will bring further update on that.
 
 The design is illustrated here:
-
+![image_processing worflow design](./readMe/image_processing_design.drawio.png)
 
 There are couple of parameters to be set:
 
