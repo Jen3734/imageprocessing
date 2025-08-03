@@ -31,6 +31,9 @@ class QueueControl{
             return queueControl;
         }
         void popEventAndAssignThreadPoolWithMem(){
+            if(!lastEventFinished && !q->empty()){
+                return;
+            }
             RequestEvent* work = q->pop();
             vector<void *>* memVector = memHandleControl->getInstance()->eventAssign(*work);
             count->resetCounter();
@@ -61,9 +64,17 @@ class QueueControl{
                 throw "error : countRef = 0";
             }
         }
+
+        CountRef* getCountRef(){
+            return count;
+        }
+        ThreadSafeQueue<RequestEvent*>* getQueue(){
+            return q;
+        }
     private:
         static QueueControl* queueControl;
         ThreadSafeQueue<RequestEvent*>* q;
+        bool lastEventFinished = true;
         ThreadPool* threadpool;
         MemHandleControl* memHandleControl;
         CountRef* count;
