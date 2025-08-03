@@ -41,7 +41,7 @@ class QueueControl{
                     JobEvent* jobEvent = new JobEvent();
                     jobEvent->rawData[j-i] = work->rawData[j];
                     void* mem = memVector->at(count->getCurrentCount());
-                    threadpool->enqueue([this, jobEvent, work, count, mem]{
+                    threadpool->enqueue([this, jobEvent, work, mem]{
                         this->getInstance()->runJob(jobEvent,work, count, mem);
                     });
                     std::this_thread::sleep_for(std::chrono::seconds(1)); 
@@ -68,4 +68,4 @@ class QueueControl{
         MemHandleControl* memHandleControl;
         CountRef* count;
         queue<vector<void *>*>* memVectorStore;
-}
+};
